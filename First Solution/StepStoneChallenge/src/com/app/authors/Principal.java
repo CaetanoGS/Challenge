@@ -1,3 +1,8 @@
+/*
+ * Author: Gustavo Caetano de Souza
+ * Junior Java Developer
+ */
+
 package com.app.authors;
 
 import java.io.IOException;
@@ -34,6 +39,7 @@ public class Principal {
 			else {
 				control = "not null";
 				System.out.println("----- Consult finished -----");
+				scan.close();
 			}
 			
 			System.out.println("\n");

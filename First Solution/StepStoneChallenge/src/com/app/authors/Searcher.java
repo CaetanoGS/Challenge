@@ -1,3 +1,8 @@
+/*
+ * Author: Gustavo Caetano de Souza
+ * Junior Java Developer
+ */
+
 package com.app.authors;
 
 import java.awt.EventQueue;
@@ -69,6 +74,8 @@ public class Searcher {
 		textField_2.setColumns(10);
 		
 		JList list = new JList(model);
+		
+		// When the button is clicked, will fill the list with the authors informations
 		
 		JButton btnNewButton = new JButton("Search");
 		btnNewButton.addActionListener(new ActionListener() {

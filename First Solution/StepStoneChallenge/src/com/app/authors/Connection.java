@@ -1,3 +1,8 @@
+/*
+ * Author: Gustavo Caetano de Souza
+ * Junior Java Developer
+ */
+
 package com.app.authors;
 
 import java.io.BufferedReader;
@@ -17,6 +22,8 @@ public class Connection {
 		super();
 	}
 	
+	// Print all the authors data
+	
 	public void showData(String firstName, String lastName) throws IOException {
 		
 		ArrayList<String> result = getAuthor(firstName, lastName);
@@ -28,6 +35,8 @@ public class Connection {
 		
 	}
 	
+	// Returns an array with all the author data
+	
 	public ArrayList<String> getAuthor(String firstName, String lastName) throws IOException {
 		
 		JSONObject json = getJSON(startConnection(firstName, lastName));
@@ -38,6 +47,8 @@ public class Connection {
 		
 		try {
 			
+			// If the search was successful, will be possible to get the authors data from the JSON
+			
 			JSONArray author = json.getJSONObject("authors").getJSONArray("author");
 			
 			
@@ -45,7 +56,10 @@ public class Connection {
 				
 				id = author.getJSONObject(i).getInt("authorid");
 				name = author.getJSONObject(i).getString("authorlastfirst");
-				//System.out.println(author.getJSONObject(8).getJSONObject("titles").length());
+				
+				//Sometimes there are a lot of titles (Array), other times just an empty 
+				//String and other an isbn array with 1 information
+				//This try/catch solve the problem
 				
 				try {
 					
@@ -73,15 +87,20 @@ public class Connection {
 		return ans;
 	}
 	
+	// Returns a JSON, where is it possible to find all authors data
 	
 	private JSONObject getJSON(HttpURLConnection con) throws IOException {
 		
 		JSONObject json = null;	
 		
+		// Verify if the get request was successful
+		
 		if(con.getResponseCode() == 200) {
 			
 			InputStream is = con.getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+			
+			// Append all the information in a Str Builder
 			
 			String str = "";
 			StringBuilder xml = new StringBuilder();
@@ -101,6 +120,9 @@ public class Connection {
 		
 		return json;
 	}
+	
+	
+	// Makes the GET request 
 	
 	private HttpURLConnection  startConnection(String firstName, String lastName) throws IOException {
 		
