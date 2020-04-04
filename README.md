@@ -1,4 +1,4 @@
-# Challenge
+# Step Stone Challenge
 
 **Task description:** For given public REST API from Penguin Random House for author search and possible search opportunities (search by firstName and lastName), please list all authors with their unique ids in a system, names and number of titles. In case the author who took contribution is other written resource, the REST API would return more author objects with the same author name and different IDs. List all author IDs with the  corresponding number of titles.
 
