@@ -1,5 +1,7 @@
 # StepStone Challenge
 
+![Solution](https://user-images.githubusercontent.com/50907344/82741927-fff23380-9d57-11ea-91fb-cc7ef7a5b21c.png)
+
 **Task description:** For given public REST API from Penguin Random House for author search and possible search opportunities (search by firstName and lastName), please list all authors with their unique ids in a system, names and number of titles. In case the author who took contribution is other written resource, the REST API would return more author objects with the same author name and different IDs. List all author IDs with the  corresponding number of titles.
 
 **Additional information:** Create a simple Java application which enables its users to search authors by their first and last name. Search parameters could be provided as program arguments. REST API for the  author  search  is  http://www.penguinrandomhouse.biz/webservices/rest/#authors.  The parameter names for the search are firstName and lastName correspondingly for the author's first name and last name. The Rest API supports both response formats: xml and json - choose one you are familiar with or prefer. Preferred platform to share the code when done is GitHub. To solve the task you can use any library/tool/framework you wish, as long as it results in a java program. Please take into account the rules of clean coding & best practices. 
